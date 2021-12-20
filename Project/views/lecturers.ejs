@@ -1,0 +1,27 @@
+<style>
+    table,th,td{
+        border: 1px solid black;
+    }
+</style>
+
+<button onclick="window.location('/addLecturer')">Add Lecturer</button>
+<br></br>
+<table>
+    <tr>
+    <th>Lecturer ID</th>
+    <th>Name</th>
+    <th>Department</th>
+    <th>Action</th>
+    </tr>
+    <% lecturers.forEach((lecturer) =>
+    { %>
+    <tr>
+    <td><%= lecturer._id %></td>
+    <td><%= lecturer.name %></td>
+    <td><%= lecturer.dept %></td>
+    <td><a href="/">Delete</a></td>
+    </tr>
+    <% }) %>
+    </table>
+    <a href="/">Home</a>
+    
