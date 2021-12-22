@@ -29,4 +29,20 @@ var getStudents = function () {
 
 }
 
-module.exports = { getStudents }
+var addStudent = function(){
+    return new Promise((resolve, reject) => {
+        var myQuery = {
+            sql: "INSERT INTO student VALUES (?, ?, ?)",
+            values: [req.body.sid, req.body.name, req.body.gpa]
+            }
+            pool.query(myQuery)
+            .then((data) => {
+                resolve(result)
+            })
+            .catch((error) => {
+                reject(error)
+            })
+    })
+    
+}
+module.exports = { getStudents, addStudent}

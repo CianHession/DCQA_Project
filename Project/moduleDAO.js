@@ -29,20 +29,4 @@ var getModules = function () {
 
 }
 
-var listStudents = function(){
-        return new Promise((resolve, reject) => {
-            var myQuery = {
-                sql: 'select * from module where mid = ?',
-                values: [mid]
-            }
-            pool.query(myQuery)
-                .then((result) => {
-                    resolve(result)
-                })
-                .catch((error) => {
-                    reject(error)
-                })
-        })
-    }
-
-module.exports = { getModules, listStudents }
+module.exports = { getModules}
